@@ -9,7 +9,6 @@ This project demonstrates my ability to build and deploy a personal resume websi
 - **Frontend**: HTML, CSS, JavaScript (React or other frameworks optional)
 - **Cloud**: 
   - AWS (S3, CloudFront, Route 53, Lambda, API Gateway)
-  - Optional: Azure/GCP
 - **CI/CD**: GitHub Actions
 
 ---
@@ -27,8 +26,7 @@ This project demonstrates my ability to build and deploy a personal resume websi
 
 1. **Clone the repo**:
     ```bash
-    git clone https://github.com/your-username/cloud-resume.git
-    cd cloud-resume
+    git clone https://github.com/mvigilia/test-mycloudresume-website
     ```
 
 2. **Deploy**:
