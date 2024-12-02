@@ -1,23 +1,25 @@
-name: Deploy Cloud Resume Website
+name: CI Pipeline
 
 on:
   push:
     branches:
-      - main
+      - main  # Trigger on push to the main branch
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout Code
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up AWS CLI
-      uses: aws-actions/configure-aws-credentials@v1
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-east-1
+        node-version: '14'  # Change to your desired Node.js version
 
-    - name: Sync files to S3
-      run: aws s3 sync ./website/ s3://your-bucket-name --delete
+    - name: Install dependencies
+      run: npm install  # Adjust if using a different package manager
+
+    - name: Run tests
+      run: npm test  # Adjust this command based on your test script
